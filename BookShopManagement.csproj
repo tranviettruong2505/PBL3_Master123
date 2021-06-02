@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D8F85CC1-9472-4794-8449-5D545C316A4E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BookShopManagement</RootNamespace>
+    <AssemblyName>BookShopManagement</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BunifuDataViz 1.0.1">
+      <HintPath>..\..\..\Setups\Bunifu DataViz\BunifuDataViz 1.0.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\..\..\Setups\Project Files\ePOSOne_Project\ePOSOne.WinForms\bin\Debug\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\BLL_BookShop.cs" />
+    <Compile Include="BLL_AD\BLL_Sach.cs" />
+    <Compile Include="BLL_AD\BLL_SachKhuyenMai.cs" />
+    <Compile Include="BLL_AD\BLL_Staff.cs" />
+    <Compile Include="BLL_AD\BLL_ThongKe.cs" />
+    <Compile Include="BLL_ST\CSDL_OOP.cs" />
+    <Compile Include="BLL_ST\CSDL_USER.cs" />
+    <Compile Include="DAL\DAL_BookShop.cs" />
+    <Compile Include="DAL\DBHelper.cs" />
+    <Compile Include="DAL_AD\DAL_Sach.cs" />
+    <Compile Include="DAL_AD\DAL_SachKhuyenMai.cs" />
+    <Compile Include="DAL_AD\DAL_Staff.cs" />
+    <Compile Include="DAL_AD\DAL_ThongKe.cs" />
+    <Compile Include="DAL_AD\DBHelper.cs" />
+    <Compile Include="DAL_ST\Login_DAL.cs" />
+    <Compile Include="DAL_ST\Connect.cs" />
+    <Compile Include="DTO\ChiTietHD.cs" />
+    <Compile Include="DTO\HoaDon.cs" />
+    <Compile Include="DTO\HoaDonView.cs" />
+    <Compile Include="DTO\Sach.cs" />
+    <Compile Include="DTO\SachKhuyenMai.cs" />
+    <Compile Include="DTO\TTSach.cs" />
+    <Compile Include="DTO_AD\Account.cs" />
+    <Compile Include="DTO_AD\CBBItem.cs" />
+    <Compile Include="DTO_AD\ChiTietHoaDon.cs" />
+    <Compile Include="DTO_AD\HoaDon.cs" />
+    <Compile Include="DTO_AD\Position.cs" />
+    <Compile Include="DTO_AD\Sach.cs" />
+    <Compile Include="DTO_AD\SachKhuyenMai.cs" />
+    <Compile Include="DTO_AD\SachKMView.cs" />
+    <Compile Include="DTO_AD\SachView.cs" />
+    <Compile Include="DTO_AD\Staff.cs" />
+    <Compile Include="DTO_AD\StaffView.cs" />
+    <Compile Include="DTO_AD\ThongTinXuatBan.cs" />
+    <Compile Include="GUI\Forms\Form_Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\Form_Dashboard.Designer.cs">
+      <DependentUpon>Form_Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Forms\Form_DetailHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\Form_DetailHoaDon.designer.cs">
+      <DependentUpon>Form_DetailHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Forms\Form_EditHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\Form_EditHoaDon.Designer.cs">
+      <DependentUpon>Form_EditHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\UC_DoanhThu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\UC_DoanhThu.Designer.cs">
+      <DependentUpon>UC_DoanhThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\UC_LapHoaDon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\UC_LapHoaDon.Designer.cs">
+      <DependentUpon>UC_LapHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\UC_ManageUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\UC_ManageUser.Designer.cs">
+      <DependentUpon>UC_ManageUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\UC_QuanliHoaDon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\UC_QuanliHoaDon.Designer.cs">
+      <DependentUpon>UC_QuanliHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_AD\CustomControls\DragControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI_AD\Forms\Form_BookDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_AD\Forms\Form_BookDetail.Designer.cs">
+      <DependentUpon>Form_BookDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_AD\Forms\Form_Dashboard_Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_AD\Forms\Form_Dashboard_Admin.Designer.cs">
+      <DependentUpon>Form_Dashboard_Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_AD\Forms\Form_InvoiceDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_AD\Forms\Form_InvoiceDetail.Designer.cs">
+      <DependentUpon>Form_InvoiceDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_AD\UserControls\UC_BookManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI_AD\UserControls\UC_BookManagement.Designer.cs">
+      <DependentUpon>UC_BookManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_AD\UserControls\UC_Discount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI_AD\UserControls\UC_Discount.Designer.cs">
+      <DependentUpon>UC_Discount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_AD\UserControls\UC_Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI_AD\UserControls\UC_Home.Designer.cs">
+      <DependentUpon>UC_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_AD\UserControls\UC_ManageExpense.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI_AD\UserControls\UC_ManageExpense.Designer.cs">
+      <DependentUpon>UC_ManageExpense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_AD\UserControls\UC_ManageKho.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI_AD\UserControls\UC_ManageKho.Designer.cs">
+      <DependentUpon>UC_ManageKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_AD\UserControls\UC_ManageProfit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI_AD\UserControls\UC_ManageProfit.Designer.cs">
+      <DependentUpon>UC_ManageProfit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_AD\UserControls\UC_ManageRevenue.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI_AD\UserControls\UC_ManageRevenue.Designer.cs">
+      <DependentUpon>UC_ManageRevenue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_AD\UserControls\UC_ManageUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI_AD\UserControls\UC_ManageUser.Designer.cs">
+      <DependentUpon>UC_ManageUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_ST\Forms\ChangePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_ST\Forms\ChangePass.Designer.cs">
+      <DependentUpon>ChangePass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_ST\Forms\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_ST\Forms\Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_ST\Forms\Form_DB_ST.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_ST\Forms\Form_DB_ST.Designer.cs">
+      <DependentUpon>Form_DB_ST.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_ST\UserControls\UC_Diary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI_ST\UserControls\UC_Diary.Designer.cs">
+      <DependentUpon>UC_Diary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_ST\UserControls\UC_Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI_ST\UserControls\UC_Home.Designer.cs">
+      <DependentUpon>UC_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_ST\UserControls\UC_ImporBook.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI_ST\UserControls\UC_ImporBook.Designer.cs">
+      <DependentUpon>UC_ImporBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_ST\UserControls\UC_ManageBook.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI_ST\UserControls\UC_ManageBook.Designer.cs">
+      <DependentUpon>UC_ManageBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DTO_ST\Bookstore.cs" />
+    <Compile Include="DTO_ST\CBBItems.cs" />
+    <Compile Include="DTO_ST\Diary.cs" />
+    <Compile Include="DTO_ST\Staff.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\Forms\Form_Dashboard.resx">
+      <DependentUpon>Form_Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Forms\Form_DetailHoaDon.resx">
+      <DependentUpon>Form_DetailHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Forms\Form_EditHoaDon.resx">
+      <DependentUpon>Form_EditHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\UC_DoanhThu.resx">
+      <DependentUpon>UC_DoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\UC_LapHoaDon.resx">
+      <DependentUpon>UC_LapHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\UC_ManageUser.resx">
+      <DependentUpon>UC_ManageUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\UC_QuanliHoaDon.resx">
+      <DependentUpon>UC_QuanliHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_AD\Forms\Form_BookDetail.resx">
+      <DependentUpon>Form_BookDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_AD\Forms\Form_Dashboard_Admin.resx">
+      <DependentUpon>Form_Dashboard_Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_AD\Forms\Form_InvoiceDetail.resx">
+      <DependentUpon>Form_InvoiceDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_AD\UserControls\UC_BookManagement.resx">
+      <DependentUpon>UC_BookManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_AD\UserControls\UC_Discount.resx">
+      <DependentUpon>UC_Discount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_AD\UserControls\UC_Home.resx">
+      <DependentUpon>UC_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_AD\UserControls\UC_ManageExpense.resx">
+      <DependentUpon>UC_ManageExpense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_AD\UserControls\UC_ManageKho.resx">
+      <DependentUpon>UC_ManageKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_AD\UserControls\UC_ManageProfit.resx">
+      <DependentUpon>UC_ManageProfit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_AD\UserControls\UC_ManageRevenue.resx">
+      <DependentUpon>UC_ManageRevenue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_AD\UserControls\UC_ManageUser.resx">
+      <DependentUpon>UC_ManageUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_ST\Forms\ChangePass.resx">
+      <DependentUpon>ChangePass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_ST\Forms\Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_ST\Forms\Form_DB_ST.resx">
+      <DependentUpon>Form_DB_ST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_ST\UserControls\UC_Diary.resx">
+      <DependentUpon>UC_Diary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_ST\UserControls\UC_Home.resx">
+      <DependentUpon>UC_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_ST\UserControls\UC_ImporBook.resx">
+      <DependentUpon>UC_ImporBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_ST\UserControls\UC_ManageBook.resx">
+      <DependentUpon>UC_ManageBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
